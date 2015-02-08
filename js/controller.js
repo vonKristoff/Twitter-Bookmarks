@@ -4,8 +4,6 @@ define(['models'], function (Models){
 
  Controller.update = function (data){
     
-    var scope = this; // root app scope so render can be called
-
     data.favourites.forEach(function (item, i){
       // console.log(item, i);
       // filter each tweet to our app model
@@ -13,12 +11,10 @@ define(['models'], function (Models){
       // Models.raw.push(Models.filter(item));
     })
       
+    
     Controller.checkDB(data.handle)
-    Controller.process(scope);
  }
- Controller.process = function (root){
-    root.render();
- }
+
  Controller.checkDB = function (handle){
     
     // set current user
