@@ -1,0 +1,63 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style: none;
+}
+.dragging {
+  cursor: none;
+}
+.tweet {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: rgba(0,0,50,0.4);
+}
+.tweet:nth-child(odd) {
+  background-color: rgba(0,50,0,0.2);
+}
+.tweet:hover {
+  cursor: pointer;
+}
+.tweet:hover .tweet--container {
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+}
+.focus {
+  z-index: -10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+.focus .hotspot {
+  pointer-events: none;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  transition: all 0.4s;
+  background-color: #f00;
+  width: 0;
+  height: 0;
+}
+.focus .hotspot.active {
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
