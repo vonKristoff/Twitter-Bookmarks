@@ -4,7 +4,8 @@ define([], function (){
     handle:'',  // user name
     raw:[],     // incoming tweets from twitter, filtered down to app use case
     local:[],   // what we have previously stored
-    live:[]     // live scope to reorder within as well as render from
+    live:[],    // live scope to reorder within as well as render from
+    order:[]    // order by tweet ids in array position
   };
 
   Models.filter = function (item, i){

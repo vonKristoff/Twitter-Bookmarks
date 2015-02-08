@@ -5,6 +5,7 @@ require.config({
   ,   transparency: 'libs/transparency'
   ,   spinner:      'libs/spin'
   ,   velocity:     'libs/velocity'
+  ,   underscore:   'libs/underscore'
   }
 });
 
