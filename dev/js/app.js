@@ -19,6 +19,7 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
         // retrieve the data
         // this.getData();
         Controller.update.call(this);
+        UI.addEvents();
       } else {
         this.errs('something bad happened in the woods.')
       }

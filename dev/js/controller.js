@@ -1,4 +1,4 @@
-define(['underscore','models'], function (_, Models){
+define(['underscore','models', 'helpers'], function (_, Models, fn){
   
  var Controller = {};
 
@@ -83,6 +83,23 @@ define(['underscore','models'], function (_, Models){
     
   }
 
+  Controller.Dragging = {
+    dragging: false,
+    capture:0,
+    target:0
+  }  
+
+  Controller.startDrag = function (){
+    // Controller.Dragging.dragging = true;
+  }
+  Controller.endDrag = function (){
+    var drg = Controller.Dragging;
+    // Controller.Dragging.dragging = false;
+    // rearrange Models.live
+    fn.switchIndex(Models.live, drg.capture, drg.target);
+    // save the data to localStorage
+    // localStorage.setItem(Models.handle, JSON.stringify(Models.live));
+  }
 
   return Controller
 

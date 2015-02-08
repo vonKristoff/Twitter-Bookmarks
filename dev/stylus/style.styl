@@ -3,8 +3,16 @@
 
 *, *:before, *:after
   box-sizing border-box
+  zero()
+
+ul
+  list-style none
+
+.dragging
+  cursor none
 
 .tweet
+  user-select none
   background-color rgba(0,0,50,.4)
   &:nth-child(odd)
     background-color rgba(0,50,0,.2)
@@ -12,3 +20,22 @@
     cursor pointer
     .tweet--container
       opacity 0
+
+.focus
+  z-index -10
+  position absolute
+  top 0
+  left 0
+  pointer-events none
+  .hotspot
+    pointer-events none
+    border-radius 50%
+    position absolute
+    transition all .4s
+    background-color red
+    width 0
+    height 0
+    &.active
+      transform translate(-50%,-50%)
+      width 100px
+      height 100px
