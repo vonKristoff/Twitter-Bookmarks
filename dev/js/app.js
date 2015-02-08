@@ -1,4 +1,4 @@
-define(['jquery', 'transparency', 'models', 'controller'], function ($, Transparency, Models, Controller){
+define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Transparency, Models, Controller, UI){
 
   // bind Template engine to jQuery
   $.fn.render = Transparency.jQueryPlugin;
@@ -17,7 +17,8 @@ define(['jquery', 'transparency', 'models', 'controller'], function ($, Transpar
       
       if(window.auth){
         // retrieve the data
-        this.getData();
+        // this.getData();
+        Controller.update.call(this);
       } else {
         this.errs('something bad happened in the woods.')
       }
@@ -37,7 +38,10 @@ define(['jquery', 'transparency', 'models', 'controller'], function ($, Transpar
   
   ap.render = function(){
     $('.handle').render({ name: Models.handle });
-    $('.favourites').render(Models.raw);
+    $('.favourites').render(Models.local);
+
+    // update UI
+    UI.setControls();
   }
   ap.errs = function (msg){
     var data = {

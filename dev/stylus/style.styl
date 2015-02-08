@@ -1,7 +1,14 @@
 @import 'nib'
 @import 'mixins'
 
-global-reset()
-
 *, *:before, *:after
-	box-sizing border-box
+  box-sizing border-box
+
+.tweet
+  background-color rgba(0,0,50,.4)
+  &:nth-child(odd)
+    background-color rgba(0,50,0,.2)
+  &:hover
+    cursor pointer
+    .tweet--container
+      opacity 0

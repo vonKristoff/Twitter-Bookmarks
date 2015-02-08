@@ -1,5 +1,5 @@
 {
-  "name": "Twitter Bookmarks",
+  "name": "TwitterBookmarks",
   "version": "0.1.0",
   "devDependencies": {
     "gulp": "*",

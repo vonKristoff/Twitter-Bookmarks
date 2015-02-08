@@ -6,6 +6,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>Twitter Bookmarks</title>
+  <link type="text/css" href="css/style.css" rel="stylesheet" media="all" />
   <script data-main="js/main" src="js/libs/require.js"></script>
 </head>
 <body>

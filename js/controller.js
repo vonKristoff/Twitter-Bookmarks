@@ -6,12 +6,16 @@ define(['underscore','models'], function (_, Models){
     
     var scope = this; // root app scope so render can be called (passed in from call)
 
-    data.favourites.forEach(function (item, i){
-      // filter each tweet to our app model
-      Models.raw.push(Models.filter(item));
-    })
+    // data.favourites.forEach(function (item, i){
+    //   // filter each tweet to our app model
+    //   Models.raw.push(Models.filter(item));
+    // })
       
-    Controller.checkDB(data.handle)
+    // Controller.checkDB(data.handle);
+
+    Controller.checkDB('vonKristoff')
+
+    // ok, render that view
     Controller.process(scope);
  }
  Controller.process = function (root){
@@ -40,7 +44,8 @@ define(['underscore','models'], function (_, Models){
 
     // sort live model based on merge of new tweets and previously stored
     // update db based on any new tweets
-    Controller.buildLiveModel()
+    
+    // Controller.buildLiveModel()
 
   }
   Controller.buildLiveModel = function (){
