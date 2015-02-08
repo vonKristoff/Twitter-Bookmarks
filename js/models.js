@@ -16,8 +16,8 @@ define([], function (){
         order: i, // order ref from array index
         text: item.text,
         name: item.user.name,
-        screen_name: item.user.screen_name,
-        profile_image_url: item.user.profile_image_url
+        handle: '@'+item.user.screen_name,
+        img: item.user.profile_image_url
       }
     }
   }

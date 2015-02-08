@@ -30,12 +30,13 @@ define(['jquery', 'transparency', 'models', 'controller'], function ($, Transpar
       url:'tweets.php',
       success: function (res){
         var data = JSON.parse(res);
-        Controller.update(data);
+        Controller.update.call($this, data);
       }
     })
   }
   
   ap.render = function(){
+    console.log(Models.raw);
     $('.handle').render({ name: Models.handle });
     $('.favourites').render(Models.raw);
   }
