@@ -1,24 +1,30 @@
-define(['jquery', 'models'], function ($, Models){
+define(['jquery', 'models', 'controller'], function ($, Models, Controller){
   
   var UI = {
     x:0,
-    y:0
+    y:0,
   };
 
  
 
   UI.setControls = function(){
+
+    var from, to;
     
-    $('.favourites li').each(function (i, itm){
+    $('.favourites li').each(function (){
       
       var $li = $(this);
 
       $li.on('mousedown', function(){
-        Controller.capture($(this).index());
+        Controller.Dragging.capture = $(this).index();
+        // from = $(this).children('.tweet--container').clone();
         
       })
       $li.on('mouseover', function(){
-        Controller.target($(this).index());
+        Controller.Dragging.target = $(this).index();
+        // if(Controller.Dragging.capture != Controller.Dragging.target){
+        //   to = $(this).children('.tweet--container').clone();  
+        // }
         // $(this).children('.tweet--container').css('opacity',0)
       })
 

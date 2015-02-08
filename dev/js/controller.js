@@ -1,25 +1,24 @@
-define(['underscore','models', 'helpers'], function (_, Models, fn){
+define(['underscore','models'], function (_, Models){
   
- var Controller = {};
+ var Controller = { root: {} };
 
  Controller.update = function (data){
     
-    var scope = this; // root app scope so render can be called (passed in from call)
+    Controller.root = this; // root app scope so render can be called (passed in from call)
 
-    // data.favourites.forEach(function (item, i){
-    //   // filter each tweet to our app model
-    //   Models.raw.push(Models.filter(item));
-    // })
+    data.favourites.forEach(function (item, i){
+      // filter each tweet to our app model
+      Models.raw.push(Models.filter(item));
+    })
       
-    // Controller.checkDB(data.handle);
+    Controller.checkDB(data.handle);
 
-    Controller.checkDB('vonKristoff')
+    // Controller.checkDB('vonKristoff') // debug
 
-    // ok, render that view
-    Controller.process(scope);
+    
  }
- Controller.process = function (root){
-    root.render();
+ Controller.draw = function (){
+    this.root.render();
  }
  Controller.checkDB = function (handle){
     
@@ -45,7 +44,7 @@ define(['underscore','models', 'helpers'], function (_, Models, fn){
     // sort live model based on merge of new tweets and previously stored
     // update db based on any new tweets
     
-    // Controller.buildLiveModel()
+    this.buildLiveModel()
 
   }
   Controller.buildLiveModel = function (){
@@ -75,30 +74,37 @@ define(['underscore','models', 'helpers'], function (_, Models, fn){
     for(var i=0;i<newNum;i++){
       Models.live.unshift(Models.raw[i])
     }
+  
     // remove values if length is over 24
     if((Models.live.length-1) >= 24) Models.order.splice((Models.live.length-1) - newNum, newNum);
 
     // we have an updated live array - save it to localstorage
     // localStorage.setItem(Models.handle, JSON.stringify(Models.live));
-    
+
+    // ok, render that view
+    Controller.draw();
   }
 
   Controller.Dragging = {
-    dragging: false,
     capture:0,
     target:0
   }  
 
   Controller.startDrag = function (){
-    // Controller.Dragging.dragging = true;
+    
   }
   Controller.endDrag = function (){
-    var drg = Controller.Dragging;
-    // Controller.Dragging.dragging = false;
-    // rearrange Models.live
-    fn.switchIndex(Models.live, drg.capture, drg.target);
-    // save the data to localStorage
-    // localStorage.setItem(Models.handle, JSON.stringify(Models.live));
+    var drag = this.Dragging;
+    if(drag.capture != drag.target){
+      // rearrange Models.live
+      // console.log(Models.live, drag.capture, drag.target);
+      Models.live = Models.sortIndex(Models.live.slice(), drag.capture, drag.target);
+      
+      // save the data to localStorage
+      // localStorage.setItem(Models.handle, JSON.stringify(Models.live)); 
+      this.draw();
+    }
+    
   }
 
   return Controller

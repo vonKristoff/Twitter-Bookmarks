@@ -14,13 +14,31 @@ define([], function (){
     return {
       tweet: { 
         id: item.id_str,
-        order: i, // order ref from array index
         text: item.text,
         name: item.user.name,
         handle: '@'+item.user.screen_name,
         img: item.user.profile_image_url
       }
     }
+  }
+
+  Models.sortIndex = function (source, capture, target) {
+  
+    var breakpoint = source.splice(capture); // first value of breakpoint is capture
+    
+    // console.log('breakpoint',breakpoint);
+    // console.log('source',source);
+
+    var item = breakpoint.shift(); // remove first value and retain it
+
+    // console.log('tim', item);
+
+    var neworder = source.concat(breakpoint); // new source array with captured element removed
+
+    neworder.splice(target, 0, item); // place captured into new target position
+
+    return neworder
+
   }
 
   return Models

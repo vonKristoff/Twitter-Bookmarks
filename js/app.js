@@ -17,8 +17,8 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
       
       if(window.auth){
         // retrieve the data
-        // this.getData();
-        Controller.update.call(this);
+        this.getData();
+        // Controller.update.call(this);
         UI.addEvents();
       } else {
         this.errs('something bad happened in the woods.')
@@ -39,7 +39,7 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
   
   ap.render = function(){
     $('.handle').render({ name: Models.handle });
-    $('.favourites').render(Models.local);
+    $('.favourites').render(Models.live);
 
     // update UI
     UI.setControls();
