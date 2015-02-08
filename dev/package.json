@@ -1,0 +1,13 @@
+{
+  "name": "Twitter Bookmarks",
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-jade": "*",
+    "gulp-livereload": "*",
+    "gulp-stylus": "*",
+    "nib": "*",
+    "gulp-jshint": "^1.7.1",
+    "jshint-stylish": "^0.4.0"
+  }
+}

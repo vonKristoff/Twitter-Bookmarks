@@ -1,0 +1,39 @@
+hide()
+  display none
+  visibility hidden
+
+show()
+	&.active
+		display block
+		visibility visible
+
+over(col)
+	&:hover
+		cursor pointer
+		color col
+
+zero()
+  margin 0
+  padding 0
+
+box-arrow(x, y, size, border, bg-col, bord-col)
+  position: relative
+  background: bg-col
+  border: border solid bord-col
+  &:after, &:before
+    top y
+    left x
+    border solid transparent
+    content " "
+    height 0
+    width 0
+    position absolute
+    pointer-events none
+  &:after
+    border-top-color bg-col
+    border-width size
+    margin-left -(size)
+  &:before
+    border-top-color bord-col
+    border-width ((size+border)*1.06)
+    margin-left -(floor((size+border)*1.06))
