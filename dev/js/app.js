@@ -1,4 +1,4 @@
-define(['jquery', 'transparency'], function ($, Transparency){
+define(['jquery', 'transparency', 'models', 'controller'], function ($, Transparency, Models, Controller){
 
   // bind Template engine to jQuery
   $.fn.render = Transparency.jQueryPlugin;
@@ -30,6 +30,7 @@ define(['jquery', 'transparency'], function ($, Transparency){
       url:'tweets.php',
       success: function (res){
         var data = JSON.parse(res);
+        Controller.update(data);
       }
     })
   }
