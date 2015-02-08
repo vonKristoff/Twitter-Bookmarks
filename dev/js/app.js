@@ -35,7 +35,8 @@ define(['jquery', 'transparency'], function ($, Transparency){
   }
   
   ap.render = function(){
-    
+    $('.handle').render({ name: Models.handle });
+    $('.favourites').render(Models.raw);
   }
   ap.errs = function (msg){
     var data = {
