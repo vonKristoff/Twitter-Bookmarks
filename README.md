@@ -10,7 +10,7 @@ Features achieved:
 
 Features failed in time:
 
-* IOS optimisation
+* IOS optimisation / mobile touch events
 * Bespoke Desktop styles
 * Time!
 
