@@ -133,7 +133,7 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
 
       setTimeout(function(j) {
         reveal(j);
-      }.bind(this, j), (j - start) * 350);
+      }.bind(this, j), (j - start) * 250);
     }
   }
   
