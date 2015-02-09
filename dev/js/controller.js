@@ -84,14 +84,16 @@ define(['underscore','models'], function (_, Models){
 
   Controller.Dragging = {
     capture:0,
-    target:0
+    target:0,
+    is: false
   }  
 
   Controller.startDrag = function (){
-    // 
+    Controller.Dragging.is = true;
   }
   Controller.endDrag = function (){
     var drag = this.Dragging;
+    Controller.Dragging.is = false;
     if(drag.capture != drag.target){
 
       // rearrange Models.live

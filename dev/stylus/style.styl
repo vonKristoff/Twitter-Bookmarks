@@ -39,21 +39,12 @@ ul
 .results--container
   margin 60px 0
   border-bottom 2px solid noir 
-  .col-1-4
-    height 60px
-    width 60px
-    display inline-block
-  .col-3-4
-    width calc(100% / 4 * 3)
-    height 100%
-    display inline-block
-    vertical-align top
-    padding-left pad
+  
 
 .tweet
   user-select none
   background-color bg1
-  transition opacity 1.5s
+  transition all .4s
   opacity 1
   &:nth-child(odd)
     background-color bg2
@@ -65,22 +56,35 @@ ul
 
 .tweet--container
   padding pad
-  position relative
-  .head
-    font-family 'Gothic-Light'
-    font-size 12px
-    padding-bottom .5em 
-    div
-      display inline-block
-    .handle
-      margin-left 1em
-  .profile
-    background-repeat no-repeat
-    border-radius 5px
-    background-position center center
-    background-size cover
-    width 100%
-    padding-top 100%
+  .col-1-4
+    max-height 50px
+    height 50px
+    max-width 50px
+    width 50px
+    display inline-block
+    .profile
+      background-repeat no-repeat
+      border-radius 5px
+      border 1px solid rgba(0,0,0,.2)
+      background-position center center
+      background-size cover
+      width 100%
+      padding-top 100%
+  .col-3-4
+    width calc(100% / 4 * 3)
+    display inline-block
+    vertical-align top
+    padding-left pad
+    .head
+      font-family 'Gothic-Light'
+      font-size 12px
+      padding-bottom .5em 
+      div
+        display inline-block
+      .handle
+        margin-left 1em
+  
+
 
 .focus
   z-index 0
