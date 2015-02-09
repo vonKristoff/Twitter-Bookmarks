@@ -25,7 +25,7 @@ The Twitter application makes a callback to `localhost:8888/twitter/index.php`, 
 
 I did want to develop with `node`, but as for portability and the usage of `oauth`, I had to opt to use `php` as the backend manager.
 
-The app follows basic `MVC` conventions. I have not used a framework, and wrote the drag and drop / resort functionallity myself rather than using an existing lib to do that.
+The app follows basic `MVC` conventions. I have not used a framework, and wrote the drag and drop / resort functionallity myself rather than using an existing lib to do that. (probably shouldn't have done that however)
 
 I hope things are straight forward to see how I tackled the app. I use the very basic `Transparency` template engine to render the tweets on the client side.
 
