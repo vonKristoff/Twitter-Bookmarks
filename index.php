@@ -10,7 +10,6 @@
   <script data-main="js/main" src="js/libs/require.js"></script>
 </head>
 <body>
-  <div class="wrapper"></div>
 </body>
 </html>
 <?php include("callback.php"); ?>

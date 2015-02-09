@@ -1,15 +1,22 @@
-.header
-  .handle
-    .name
-  a.refresh(href="index.php") refresh
-#error
-  .msg
-.results--container
-  ul.favourites
-    li.tweet
-      .tweet--container 
-        .id
-        .text
-        .handle
+.wrapper
+  .header
+    .menu.handle
+      .name
+    .menu.refresh
+      a(href="index.php") refresh
+  #error
+    .msg
+  .results--container
+    ul.favourites
+      li.tweet
+        .tweet--container
+          .col-1-4
+            .profiles
+          .col-3-4
+            .head
+              .name
+              .handle
+            .body
+              .text
 .focus
   .hotspot

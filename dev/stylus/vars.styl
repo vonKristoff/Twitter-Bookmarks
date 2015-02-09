@@ -1,0 +1,22 @@
+bg1 = #E0DED3
+bg2 = #CECBBE
+noir = #000
+blu = #3461AB
+gold = #EB9303
+
+local = "/twitter/build"
+
+_goth_light = "/assets/fonts/GothamRounded-Light/GothamRounded-Light"
+_goth_med   = "/assets/fonts/GothamRounded-Medium/GothamRounded-Medium"
+
+ffont(name, path)
+  @font-face 
+    font-family name
+    src url(path + '.eot')
+    src url(path + '.svg#' + name) format('svg'), url(path + '.ttf') format('truetype'), url(path + '.woff') format('woff')
+    font-weight normal
+    font-style normal
+
+
+ffont('Gothic-Light', local+_goth_light)
+ffont('Gothic-Med', local+_goth_med)

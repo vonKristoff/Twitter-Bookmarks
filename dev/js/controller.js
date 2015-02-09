@@ -6,20 +6,17 @@ define(['underscore','models'], function (_, Models){
     
     Controller.root = this; // root app scope so render can be called (passed in from call)
 
-    data.favourites.forEach(function (item, i){
-      // filter each tweet to our app model
-      Models.raw.push(Models.filter(item));
-    })
+    // data.favourites.forEach(function (item, i){
+    //   // filter each tweet to our app model
+    //   Models.raw.push(Models.filter(item));
+    // })
       
-    Controller.checkDB(data.handle);
+    // Controller.checkDB(data.handle);
 
-    // Controller.checkDB('vonKristoff') // debug
+    Controller.checkDB('vonKristoff') // debug
+ 
+ }
 
-    
- }
- Controller.draw = function (){
-    this.root.render();
- }
  Controller.checkDB = function (handle){
     
     // set current user
@@ -82,7 +79,7 @@ define(['underscore','models'], function (_, Models){
     // localStorage.setItem(Models.handle, JSON.stringify(Models.live));
 
     // ok, render that view
-    Controller.draw();
+    this.root.render();
   }
 
   Controller.Dragging = {
@@ -91,20 +88,27 @@ define(['underscore','models'], function (_, Models){
   }  
 
   Controller.startDrag = function (){
-    
+    // 
   }
   Controller.endDrag = function (){
     var drag = this.Dragging;
     if(drag.capture != drag.target){
+
       // rearrange Models.live
-      // console.log(Models.live, drag.capture, drag.target);
       Models.live = Models.sortIndex(Models.live.slice(), drag.capture, drag.target);
       
       // save the data to localStorage
       // localStorage.setItem(Models.handle, JSON.stringify(Models.live)); 
-      this.draw();
+
+      // update the view
+      this.root.render(drag.target+1);
     }
     
+  }
+
+  // clean storage
+  Controller.kill = function (){
+    localStorage.clear();
   }
 
   return Controller

@@ -6,14 +6,14 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
   var App = function(){
     
     this.init();
-      
     return this.api()
   }
+
   var ap = App.prototype;
   
   ap.init = function(){
     // add templates to page
-    $('.wrapper').load('partials/content.html', function(){
+    $('body').load('partials/content.html', function(){
       
       if(window.auth){
         // retrieve the data
@@ -37,12 +37,25 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
     })
   }
   
-  ap.render = function(){
-    $('.handle').render({ name: Models.handle });
-    $('.favourites').render(Models.live);
-
+  ap.render = function(fromIndex){
+    $('.handle').render({ name: '@'+Models.handle });
+    $('.favourites').render(Models.local);
+    // draw effect
+    UI.fx(fromIndex);
     // update UI
     UI.setControls();
+  }
+  ap.directives = function (){
+    // use for templates handling
+    var array = [];
+    for(var i=0;i<Models.local.length;i++){
+      array[i] = {
+        hidden: {
+          id: Models.local[i].id
+        }
+      }
+    }
+    return array
   }
   ap.errs = function (msg){
     var data = {
