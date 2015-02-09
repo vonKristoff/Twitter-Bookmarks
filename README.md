@@ -19,7 +19,7 @@ Features failed in time:
 
 ###Testing the app
 
-The Twitter application makes a callback to `localhost:8888/twitter/index.php`, so like me please run **MAMP** at std port and deploy the code to the **twitter** directory as seen above in the callback.
+The Twitter application makes a callback to `localhost:8888/twitter/index.php`, so like me please run **MAMP** at std port and deploy the code to the **twitter** directory as seen above in the callback. This will create issues if you try running this on a mobile, as it wont know where localhost is. Sorry.
 
 ###Application design
 
