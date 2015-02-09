@@ -37,7 +37,7 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
     })
   }
   
-  ap.render = function(fromIndex){
+  ap.render = function (fromIndex){
 
     $('.handle').render({ name: '@'+Models.handle });
     $('.favourites').render(Models.local, this.directives());
@@ -49,7 +49,7 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
     // update UI
     UI.setControls();
   }
-  ap.directives = function (){
+  ap.directives = function(){
     // use for templates handling
     var attribute = {
       hidden: {

@@ -51,11 +51,19 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
       $li.on('mouseover', function(){
         // potential drop target
         Controller.Dragging.target = $(this).index();
-        if(Controller.Dragging.is) $(this).addClass('dragover')
+        if(Controller.Dragging.is) {
+          $(this).addClass('dragover')
+        } else {
+          $(this).addClass('nudge')
+        }
       })
 
       $li.on('mouseleave', function(){
-        if(Controller.Dragging.is) $(this).removeClass('dragover')
+        if(Controller.Dragging.is) {
+          $(this).removeClass('dragover')
+        } else {
+          $(this).removeClass('nudge')
+        }
       })
 
     })

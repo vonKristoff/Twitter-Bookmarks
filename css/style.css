@@ -49,6 +49,27 @@ ul {
   width: 50%;
   padding: 1em 2em;
 }
+.header .menu .icon {
+  background-image: url("/twitter/build/assets/icons/refresh.svg");
+  width: 1em;
+  height: 1em;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  background-size: contain;
+  display: inline-block;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.header .menu .icon:hover {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 .header .menu.refresh {
   text-align: right;
 }
@@ -80,6 +101,9 @@ ul {
 .tweet.dragover {
   background-color: #eb9303;
 }
+.tweet.nudge {
+  border-left: 0.5em solid #e91b77;
+}
 .tweet--container {
   padding: 2em;
 }
@@ -103,7 +127,7 @@ ul {
   padding-top: 100%;
 }
 .tweet--container .col-3-4 {
-  width: calc(100% / 4 * 3);
+  width: calc(100% - 4em - 50px - 2em);
   display: inline-block;
   vertical-align: top;
   padding-left: 2em;
