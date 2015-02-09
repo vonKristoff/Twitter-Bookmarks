@@ -108,7 +108,7 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
   UI.profiles = function (){
   
     $('.tweet').each(function (i){
-      console.log(i);
+
       var p = $(this).find('.profile');
       // get img src
       var src = Models.live[i].tweet.img
@@ -133,7 +133,7 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
 
       setTimeout(function(j) {
         reveal(j);
-      }.bind(this, j), (j - start) * 100);
+      }.bind(this, j), (j - start) * 350);
     }
   }
   
