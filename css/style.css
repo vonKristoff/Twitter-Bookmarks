@@ -109,6 +109,7 @@ ul {
 }
 .tweet.dragover {
   background-color: #eb9303;
+  cursor: pointer;
 }
 .tweet.nudge {
   border-left: 0.5em solid #e91b77;
