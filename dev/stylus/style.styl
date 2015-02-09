@@ -9,6 +9,7 @@
 html
   font-family 'Gothic-Med'
   font-size 18px
+  background-color gold
 
 ul
   list-style none
@@ -17,33 +18,45 @@ ul
   cursor none
 
 .wrapper
-  width 50%
+  width 100%
   margin 0 auto
   position relative
 
 .header
-  background-color rgba(0,0,0,.2)
+  background-color gold
+  border-bottom 2px solid noir
   position fixed
   width inherit
   top 0
   .menu
     display inline-block
     width 50%
-    padding 1em
+    padding 1em pad
     &.refresh
       text-align right
 
 
 .results--container
-  margin 50px 0
+  margin 60px 0
+  border-bottom 2px solid noir 
+  .col-1-4
+    height 60px
+    width 60px
+    display inline-block
+  .col-3-4
+    width calc(100% / 4 * 3)
+    height 100%
+    display inline-block
+    vertical-align top
+    padding-left pad
 
 .tweet
   user-select none
-  background-color rgba(0,0,50,.4)
-  transition opacity .7s
+  background-color bg1
+  transition opacity 1.5s
   opacity 1
   &:nth-child(odd)
-    background-color rgba(0,50,0,.2)
+    background-color bg2
   &:hover
     cursor pointer
   &.dragover
@@ -51,11 +64,23 @@ ul
     
 
 .tweet--container
-  padding 2em
+  padding pad
+  position relative
   .head
     font-family 'Gothic-Light'
     font-size 12px
-
+    padding-bottom .5em 
+    div
+      display inline-block
+    .handle
+      margin-left 1em
+  .profile
+    background-repeat no-repeat
+    border-radius 5px
+    background-position center center
+    background-size cover
+    width 100%
+    padding-top 100%
 
 .focus
   z-index 0

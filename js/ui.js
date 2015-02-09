@@ -18,28 +18,27 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
 
       $li.on('mousedown', function(e){
 
-        var o = $(this).offset();
-        UI.ox = o.left;
-        UI.oy = o.top;
-        UI.x = e.pageX - o.left;
-        UI.y = e.pageY - o.top;
+        var $this = $(this)
+        ,   o = $this.offset();
+
+        Controller.Dragging.capture = $this.index();
+        Controller.startDrag();
+
+        UI.ox = e.pageX - o.left;
+        UI.oy = e.pageY - o.top;
+        UI.x  = e.pageX - UI.ox;
+        UI.y  = e.pageY - UI.oy;
         UI.sy = window.pageYOffset;
 
-        var scrollY = UI.sy + e.pageY;
-
         $('.focus').css({
-          'transform': 'translate('+UI.x+'px,'+scrollY+'px)'
+          'transform': 'translate('+UI.x+'px,'+UI.y+'px)'
         })
 
-
-        Controller.Dragging.capture = $(this).index();
-        from = $(this).children('.tweet--container').clone();
+        from = $this.children('.tweet--container').clone();
         from.css({
           width:$('.results--container').width()
         })
         
-        Controller.startDrag();
-
         $('.hotspot').html(from)
       })
 
@@ -87,7 +86,7 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
 
       UI.sy = window.pageYOffset;
 
-      var scrollY = UI.sy + UI.y + UI.oy;
+      var scrollY = UI.sy + UI.y;
 
       $('.focus').css({
         'transform': 'translate('+UI.x+'px,'+scrollY+'px)'
@@ -97,7 +96,19 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
 
   }
 
+  UI.profiles = function (){
   
+    $('.tweet').each(function (){
+      var p = $(this).find('.profile');
+      // get img src
+      var src = p.data('src');
+      // set bg
+      p.css({
+        'background-image': 'url('+src+')'
+      })      
+    })  
+
+  }
 
   UI.fx = function (from){
 

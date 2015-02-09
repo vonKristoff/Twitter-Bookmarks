@@ -38,8 +38,12 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
   }
   
   ap.render = function(fromIndex){
+
     $('.handle').render({ name: '@'+Models.handle });
-    $('.favourites').render(Models.local);
+    $('.favourites').render(Models.local, this.directives());
+
+    // set profile image
+    UI.profiles();
     // draw effect
     UI.fx(fromIndex);
     // update UI
@@ -47,15 +51,19 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
   }
   ap.directives = function (){
     // use for templates handling
-    var array = [];
-    for(var i=0;i<Models.local.length;i++){
-      array[i] = {
-        hidden: {
-          id: Models.local[i].id
+    var attribute = {
+      hidden: {
+        'data-id': function() {      
+          return this.tweet.id;
+        }
+      },
+      profile: {
+        'data-src': function() {
+          return this.tweet.img
         }
       }
     }
-    return array
+    return attribute
   }
   ap.errs = function (msg){
     var data = {
