@@ -6,15 +6,12 @@ define(['underscore','models'], function (_, Models){
     
     Controller.root = this; // root app scope so render can be called (passed in from call)
 
-    // data.favourites.forEach(function (item, i){
-    //   // filter each tweet to our app model
-    //   Models.raw.push(Models.filter(item));
-    // })
+    data.favourites.forEach(function (item, i){
+      // filter each tweet to our app model
+      Models.raw.push(Models.filter(item));
+    })
       
-    // Controller.checkDB(data.handle);
-
-    Controller.checkDB('vonKristoff') // debug
- 
+    Controller.checkDB(data.handle);
  }
 
  Controller.checkDB = function (handle){
@@ -76,7 +73,7 @@ define(['underscore','models'], function (_, Models){
     if((Models.live.length-1) >= 24) Models.order.splice((Models.live.length-1) - newNum, newNum);
 
     // we have an updated live array - save it to localstorage
-    // localStorage.setItem(Models.handle, JSON.stringify(Models.live));
+    localStorage.setItem(Models.handle, JSON.stringify(Models.live));
 
     // ok, render that view
     this.root.render();
@@ -87,7 +84,7 @@ define(['underscore','models'], function (_, Models){
     target:0,
     is: false
   }  
-
+  
   Controller.startDrag = function (){
     Controller.Dragging.is = true;
   }
@@ -100,13 +97,13 @@ define(['underscore','models'], function (_, Models){
       Models.live = Models.sortIndex(Models.live.slice(), drag.capture, drag.target);
       
       // save the data to localStorage
-      // localStorage.setItem(Models.handle, JSON.stringify(Models.live)); 
+      localStorage.setItem(Models.handle, JSON.stringify(Models.live)); 
 
       // update the view
       this.root.render(drag.target+1);
     }
-    
   }
+
 
   // clean storage
   Controller.kill = function (){

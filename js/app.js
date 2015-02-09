@@ -18,7 +18,7 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
       if(window.auth){
         // retrieve the data
         this.getData();
-        // Controller.update.call(this);
+        // add page scroll & mousemove events
         UI.addEvents();
       } else {
         this.errs('something bad happened in the woods.')
@@ -40,7 +40,7 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
   ap.render = function (fromIndex){
 
     $('.handle').render({ name: '@'+Models.handle });
-    $('.favourites').render(Models.local, this.directives());
+    $('.favourites').render(Models.live, this.directives());
 
     // set profile image
     UI.profiles();
@@ -76,6 +76,9 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
       info: {
         version: 1.0,
         name: 'Twitter Bookmarks'
+      },
+      clearLocalStorage: function(){
+        Controller.kill();
       }
     }
   }

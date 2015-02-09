@@ -6,7 +6,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>Twitter Bookmarks</title>
   <link type="text/css" href="css/style.css" rel="stylesheet" media="all" />
-  <script data-main="js/main" src="js/libs/require.js"></script>
 </head>
 <body>
 <div class="wrapper">
@@ -33,7 +32,7 @@ $_SESSION['oauth_token_secret'] = $request_token['oauth_token_secret'];
  
 $url = $connection->url('oauth/authorize', array('oauth_token' => $request_token['oauth_token']));
 
-echo '<a href="'.$url.'">connect</a>';
+echo '<a class="connect" href="'.$url.'">Connect</a>';
 
 echo '</div>
       </div>

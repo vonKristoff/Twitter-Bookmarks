@@ -5,7 +5,7 @@ define([], function (){
     raw:[],     // incoming tweets from twitter, filtered down to app use case
     local:[],   // what we have previously stored
     live:[],    // live scope to reorder within as well as render from
-    order:[]    // order by tweet ids in array position
+    order:[]    // temp array to see if there are any new tweets to prepend to our saved order
   };
 
   Models.filter = function (item, i){
@@ -30,8 +30,6 @@ define([], function (){
     // console.log('source',source);
 
     var item = breakpoint.shift(); // remove first value and retain it
-
-    // console.log('tim', item);
 
     var neworder = source.concat(breakpoint); // new source array with captured element removed
 

@@ -29,8 +29,17 @@ html {
 ul {
   list-style: none;
 }
-.dragging {
-  cursor: none;
+.connect {
+  color: #000;
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.connect:hover {
+  color: #3461ab;
 }
 .wrapper {
   width: 100%;
@@ -149,15 +158,11 @@ ul {
   top: 0;
   left: 0;
   pointer-events: none;
+  cursor: none;
 }
 .focus .hotspot {
   pointer-events: none;
   position: absolute;
-  -webkit-transition: all 0.2s;
-  -moz-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  -ms-transition: all 0.2s;
-  transition: all 0.2s;
   background-color: #000;
   width: 100%;
   height: 100%;

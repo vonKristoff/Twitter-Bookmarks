@@ -107,10 +107,11 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
   // add bg profile images to tweets
   UI.profiles = function (){
   
-    $('.tweet').each(function (){
+    $('.tweet').each(function (i){
+      console.log(i);
       var p = $(this).find('.profile');
       // get img src
-      var src = p.data('src');
+      var src = Models.live[i].tweet.img
       // set bg
       p.css({
         'background-image': 'url('+src+')'

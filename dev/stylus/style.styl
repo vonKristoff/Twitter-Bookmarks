@@ -14,8 +14,12 @@ html
 ul
   list-style none
 
-.dragging
-  cursor none
+.connect
+  color noir
+  text-decoration none
+  transition all .3s
+  &:hover
+    color blu
 
 .wrapper
   width 100%
@@ -103,10 +107,10 @@ ul
   top 0
   left 0
   pointer-events none
+  cursor none
   .hotspot
     pointer-events none
     position absolute
-    transition all .2s
     background-color noir
     width 100%
     height 100%
