@@ -1,14 +1,14 @@
 @font-face {
   font-family: 'Gothic-Light';
-  src: url("/twitter/build/assets/fonts/GothamRounded-Light/GothamRounded-Light.eot");
-  src: url("/twitter/build/assets/fonts/GothamRounded-Light/GothamRounded-Light.svg#Gothic-Light") format('svg'), url("/twitter/build/assets/fonts/GothamRounded-Light/GothamRounded-Light.ttf") format('truetype'), url("/twitter/build/assets/fonts/GothamRounded-Light/GothamRounded-Light.woff") format('woff');
+  src: url("/twitter/assets/fonts/GothamRounded-Light/GothamRounded-Light.eot");
+  src: url("/twitter/assets/fonts/GothamRounded-Light/GothamRounded-Light.svg#Gothic-Light") format('svg'), url("/twitter/assets/fonts/GothamRounded-Light/GothamRounded-Light.ttf") format('truetype'), url("/twitter/assets/fonts/GothamRounded-Light/GothamRounded-Light.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Gothic-Med';
-  src: url("/twitter/build/assets/fonts/GothamRounded-Medium/GothamRounded-Medium.eot");
-  src: url("/twitter/build/assets/fonts/GothamRounded-Medium/GothamRounded-Medium.svg#Gothic-Med") format('svg'), url("/twitter/build/assets/fonts/GothamRounded-Medium/GothamRounded-Medium.ttf") format('truetype'), url("/twitter/build/assets/fonts/GothamRounded-Medium/GothamRounded-Medium.woff") format('woff');
+  src: url("/twitter/assets/fonts/GothamRounded-Medium/GothamRounded-Medium.eot");
+  src: url("/twitter/assets/fonts/GothamRounded-Medium/GothamRounded-Medium.svg#Gothic-Med") format('svg'), url("/twitter/assets/fonts/GothamRounded-Medium/GothamRounded-Medium.ttf") format('truetype'), url("/twitter/assets/fonts/GothamRounded-Medium/GothamRounded-Medium.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -59,7 +59,7 @@ ul {
   padding: 1em 2em;
 }
 .header .menu .icon {
-  background-image: url("/twitter/build/assets/icons/refresh.svg");
+  background-image: url("/twitter/assets/icons/refresh.svg");
   width: 1em;
   height: 1em;
   -webkit-background-size: contain;
