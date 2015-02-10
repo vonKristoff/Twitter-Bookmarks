@@ -153,6 +153,10 @@ ul {
 .tweet--container .col-3-4 .head .handle {
   margin-left: 1em;
 }
+.tweet--container .col-3-4 .body .text a {
+  color: #3461ab;
+  text-decoration: none;
+}
 .focus {
   z-index: 0;
   position: absolute;
