@@ -25,6 +25,7 @@ html {
   font-family: 'Gothic-Med';
   font-size: 18px;
   background-color: #eb9303;
+  overflow-x: hidden;
 }
 ul {
   list-style: none;
@@ -122,7 +123,8 @@ ul {
   height: 50px;
   max-width: 50px;
   width: 50px;
-  display: inline-block;
+  float: left;
+  margin-right: 2em;
 }
 .tweet--container .col-1-4 .profile {
   background-repeat: no-repeat;
@@ -136,24 +138,38 @@ ul {
   width: 100%;
   padding-top: 100%;
 }
-.tweet--container .col-3-4 {
-  width: calc(100% - 4em - 50px - 2em);
-  display: inline-block;
-  vertical-align: top;
+.tweet--container .col-head {
+  width: 100%;
   padding-left: 2em;
 }
-.tweet--container .col-3-4 .head {
+@media (max-width: 768px) {
+  .tweet--container .col-head {
+    margin-top: 1em;
+    margin-bottom: 2em;
+  }
+}
+.tweet--container .col-head .head {
   font-family: 'Gothic-Light';
   font-size: 12px;
   padding-bottom: 0.5em;
 }
-.tweet--container .col-3-4 .head div {
+.tweet--container .col-head .head div {
   display: inline-block;
 }
-.tweet--container .col-3-4 .head .handle {
+.tweet--container .col-head .head .handle {
   margin-left: 1em;
 }
-.tweet--container .col-3-4 .body .text a {
+.tweet--container .col-body {
+  width: 100%;
+  padding-left: 2em;
+}
+@media (max-width: 768px) {
+  .tweet--container .col-body {
+    margin-top: 2em;
+    padding-left: 0;
+  }
+}
+.tweet--container .col-body .body .text a {
   color: #3461ab;
   text-decoration: none;
 }
