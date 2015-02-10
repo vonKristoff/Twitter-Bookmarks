@@ -107,6 +107,12 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
   // add bg profile images to tweets
   UI.profiles = function (){
   
+    function urlify(text) {
+      var urlRegex = /(https?:\/\/[^\s]+)/g;
+      return text.replace(urlRegex, '<a href="$1">$1</a>')
+    }
+
+
     $('.tweet').each(function (i){
 
       var p = $(this).find('.profile');
@@ -115,7 +121,14 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
       // set bg
       p.css({
         'background-image': 'url('+src+')'
-      })      
+      })
+
+      var body = $(this).find('.text')
+      ,   text = body.text()
+      ,   linked = urlify(text);
+
+      body.html(linked);
+
     })  
   }
 
