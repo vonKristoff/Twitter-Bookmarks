@@ -13,9 +13,10 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
     var clone, to;
     
     // bind to each tweet item --> should be inheriting the function
-    $('.favourites li').each(function (){
-      
+    $('.favourites li').each(function (i, el){
+
       var $li = $(this);
+
       // the begin to drag view coords and html clone 
       $li.on('mousedown', function(e){
 
@@ -47,7 +48,7 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
         // add to DOM
         $('.focus .hotspot').html(clone)
       })
-
+      
       $li.on('mouseover', function(){
         // potential drop target
         Controller.Dragging.target = $(this).index();
@@ -80,6 +81,8 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
 
   UI.addEvents = function (){
 
+
+
     // track mouse movements for drag
     document.addEventListener('mousemove', function (e){
       
@@ -91,6 +94,7 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
         'transform': 'translate('+UI.x+'px,'+scrollY+'px)'
       })
     })
+
 
     // update y offset if dragging when scrolling
     document.addEventListener('scroll', function (e){
@@ -138,10 +142,14 @@ define(['jquery', 'models', 'controller'], function ($, Models, Controller){
     var start = 1
     if(from) start = from;
 
+    $('.results--container').removeClass('ajax--loading');
+
     var reveal = function (n){
       $('.tweet:nth-child('+n+')').css('opacity',1);
     }
+    
     for(var j=start;j<=Models.live.length;j++){
+      
       $('.tweet:nth-child('+j+')').css('opacity',0);
 
       setTimeout(function(j) {

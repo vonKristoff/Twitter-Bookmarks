@@ -6,6 +6,8 @@ define(['underscore','models'], function (_, Models){
     
     Controller.root = this; // root app scope so render can be called (passed in from call)
 
+    // console.log(data.favourites);
+
     data.favourites.forEach(function (item, i){
       // filter each tweet to our app model
       Models.raw.push(Models.filter(item));

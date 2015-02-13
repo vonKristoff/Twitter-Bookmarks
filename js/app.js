@@ -14,7 +14,7 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
   ap.init = function(){
     // add templates to page
     $('body').load('partials/content.html', function(){
-      
+
       if(window.auth){
         // retrieve the data
         this.getData();
@@ -33,6 +33,9 @@ define(['jquery', 'transparency', 'models', 'controller', 'ui'], function ($, Tr
       success: function (res){
         var data = JSON.parse(res);
         Controller.update.call($this, data);
+      },
+      error: function (msg){
+        console.log(msg);
       }
     })
   }

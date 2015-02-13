@@ -6,6 +6,7 @@ require.config({
   ,   spinner:      'libs/spin'
   ,   velocity:     'libs/velocity'
   ,   underscore:   'libs/underscore'
+
   }
 });
 

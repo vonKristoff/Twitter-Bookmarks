@@ -86,6 +86,10 @@ ul {
 .results--container {
   margin: 60px 0;
   border-bottom: 2px solid #000;
+  display: block;
+}
+.results--container.ajax--loading {
+  display: none;
 }
 .tweet {
   -webkit-user-select: none;
